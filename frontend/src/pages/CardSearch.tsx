@@ -4,7 +4,6 @@ import Header from '../components/Header'
 const CardSearch = () => {
   return (
     <div>
-      <Header />
 
       <form className="mt-4 w-[50vw] mx-auto" role="search">
         <div
