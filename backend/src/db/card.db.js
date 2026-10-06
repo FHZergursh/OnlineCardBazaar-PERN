@@ -17,7 +17,8 @@ export async function setupCardsDB() {
         game VARCHAR(255) NOT NULL,
         game_set VARCHAR(255),
         in_stock BOOLEAN DEFAULT TRUE,
-        stock_amount INT
+        stock_amount INT,
+        image_url VARCHAR(1000)
       );
     `;
     console.log('Finished initialising table.');
