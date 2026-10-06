@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import type {Card} from '../types/Card.ts'
+import MarketCard from '../components/MarketCard.tsx'
 
 
 
@@ -11,9 +12,9 @@ const Marketplace = () => {
     console.log("Get cards ran")
     try {
       const res = await fetch("http://localhost:3001/api/cards")
-      const card = await res.json()
-      console.log(card)
-      setCardList(card.data)
+      const response = await res.json()
+      console.log(response)
+      setCardList(response.card)
     } catch (error) {
       console.log(error)
     }
@@ -24,16 +25,25 @@ const Marketplace = () => {
 
 
   return (
-    <div>
-      test,
-      needs the grid here,
-      check console for data import confirm
+    <div className='flex justify-center items-center'>
+      <div className='grid grid-cols-5 gap-10 mt-[10vh]'>
+            {cardList.map ((card) => (
+              <div key={card.id}>
+                <MarketCard marketCard={card} />
+              </div>
+            ))}
+      </div>
 
       
 
 
 
     </div>
+
+
+
+
+
   )
 }
 
