@@ -6,6 +6,7 @@ export interface Card {
   game: string,
   game_set: string,
   in_stock: boolean,
-  stock_amount: number
+  stock_amount: number,
+  image_url: string
 
 }
