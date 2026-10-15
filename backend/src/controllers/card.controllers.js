@@ -33,7 +33,7 @@ export const getCard = async (req, res) => {
     }
     else 
     {
-      return res.status(200).json({success: true, card: cardFound})
+      return res.status(200).json({success: true, card: cardFound[0]})
     }
 
   } catch (error) {
